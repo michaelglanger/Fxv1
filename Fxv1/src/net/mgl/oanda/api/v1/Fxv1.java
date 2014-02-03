@@ -8,7 +8,7 @@ package net.mgl.oanda.api.v1;
 
 /**
  *
- * @author axjyb
+ * @author Michael G. Langer
  */
 public class Fxv1 {
 
