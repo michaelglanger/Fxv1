@@ -33,10 +33,10 @@ public class MaxMinRegion {
 	public Tuple step(CandlePoint cp) {
 		Tuple result = new Tuple();
 		
-		regionList.remove(0);
+		regionList.remove(regionList.size()-1);
 		regionList.add(cp);
 		
-		max = regionList.get(0).getClose();
+		max = regionList.get(regionList.size()-1).getClose();
 		min = max;
 		
 		for (CandlePoint c : regionList) {
@@ -46,7 +46,8 @@ public class MaxMinRegion {
 				min = c.getClose();
 			}
 		}
-		
+		result.max = max;
+		result.min = min;
 		return result;
 	}
 
