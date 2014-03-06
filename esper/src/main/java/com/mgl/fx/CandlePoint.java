@@ -15,7 +15,9 @@
 //
 package com.mgl.fx;
 
-public class CandlePoint {
+import java.io.Serializable;
+
+public class CandlePoint implements Serializable{
 		
 	private double open;
 	private double max;
@@ -63,6 +65,11 @@ public class CandlePoint {
 	}
 	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
+	}
+	
+	public String toString() {
+		return "Timestamp: " + timestamp + " Open: " + open + " Max: " + max + " Min: " + min + " Close: " + close;
+		
 	}
 	
 }
