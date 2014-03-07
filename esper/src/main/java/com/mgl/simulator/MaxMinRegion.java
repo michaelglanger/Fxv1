@@ -15,7 +15,7 @@
 //
 package com.mgl.simulator;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mgl.fx.CandlePoint;
@@ -24,7 +24,7 @@ public class MaxMinRegion {
 	
 	private double max;
 	private double min;
-	private List<CandlePoint> regionList = new LinkedList<CandlePoint>();
+	private List<CandlePoint> regionList = new ArrayList<CandlePoint>();
 	
 	public MaxMinRegion(List<CandlePoint> initRegion) {
 		regionList.addAll(initRegion);
@@ -33,10 +33,10 @@ public class MaxMinRegion {
 	public Tuple step(CandlePoint cp) {
 		Tuple result = new Tuple();
 		
-		regionList.remove(regionList.size()-1);
+		regionList.remove(0);
 		regionList.add(cp);
-		
-		max = regionList.get(regionList.size()-1).getClose();
+
+		max = regionList.get(0).getClose();
 		min = max;
 		
 		for (CandlePoint c : regionList) {
